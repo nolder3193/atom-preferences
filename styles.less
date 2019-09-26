@@ -1,9 +1,9 @@
 // Defaults
-@pink: rgb(255, 99, 158);
-@red: @pink;
+@pink: rgb(255, 116, 254);
+@red: rgb(255, 108, 144);
 @orange: rgb(255, 128, 110);
 @yellow: rgb(242, 214, 113);
-@green: rgb(80, 204, 133);
+@green: rgb(66, 201, 134);
 @blue: rgb(66, 170, 255);
 @lightblue: rgb(105, 193, 255);
 @turquoise: rgb(48, 181, 186);
@@ -13,17 +13,21 @@
 @darkgray: rgb(100, 104, 160);
 @gray: rgb(140, 145, 210);
 @lightgray: rgb(170, 180, 225);
+
 // ==================================================
 //                    INTERFACE
 // ==================================================
+
 // Text editor
 atom-text-editor {
   background: rgb(30, 30, 47);
   color: @lightgray;
 }
+
 atom-pane.active {
   background: rgb(30, 30, 47);
 }
+
 // Tab bar, tree view, project title
 .tab-bar,
 .tree-view,
@@ -32,6 +36,7 @@ atom-dock .tab-bar .tab.active {
   color: @lightgray;
   border-bottom: none;
 }
+
 // Tab bar
 .tab-bar {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.24),
@@ -39,6 +44,7 @@ atom-dock .tab-bar .tab.active {
   height: 50px;
   position: relative;
   z-index: 3;
+
   // Tabs
   .tab {
     background: rgb(19, 19, 29);
@@ -46,9 +52,11 @@ atom-dock .tab-bar .tab.active {
     border-right: 1px solid rgba(0, 0, 0, 0.5);
     color: rgba(160, 170, 210, 0.5);
     transition: 0.2s !important;
+
     &:hover {
       background: rgb(30, 30, 46);
     }
+
     // Active tab
     &.active {
       background: rgb(40, 40, 62) !important;
@@ -56,53 +64,64 @@ atom-dock .tab-bar .tab.active {
       color: @lightgray;
       font-weight: bold;
       opacity: 1;
+
       // "Project" tab
       &[data-type="TreeView"] {
         background: rgb(19, 19, 29) !important;
       }
+
       // Hide left border
       &::before {
         display: none;
       }
     }
+
     // Close button
     .close-icon {
       top: 17px !important;
     }
   }
 }
+
 // Project & tab titles
 .title {
   font-size: 15px;
   line-height: 50px;
+
   // Tab icons
   &::before {
     margin-right: 12px !important;
   }
 }
+
 // Change dashboard icon to HTML5 icon
 .dashboard-icon::before {
   content: "\f13b";
   font-family: FontAwesome;
 }
+
 // Footer bar
 .status-bar {
   background: rgb(19, 19, 29);
 }
+
 // Panes
 atom-pane-container atom-pane {
   border-bottom: 2px solid rgb(22, 22, 34);
   border-right: 2px solid rgb(22, 22, 34);
 }
+
 // Pane text area
 .gutter-container + .scroll-view > div,
 .gutter-container > div {
   // padding: 20px 0;
 }
+
 // Autocomplete suggestions
 .autocomplete-plus {
   transform: translateY(20px);
 }
+
 // Bracket colorization
 atom-text-editor.editor {
   .bracket-colorizer-color0 {
@@ -136,304 +155,380 @@ atom-text-editor.editor {
     color: rgb(1, 204, 190);
   }
 }
+
 // ==================================================
-//                      CODE
+//                    	CODE
 // ==================================================
+
 // MISC ================================================
+
 // Comments
 .syntax--comment,
 .syntax--comment {
   color: @dark-indigo;
+
   // Comment markers
   &.syntax--punctuation.syntax--definition {
     color: inherit;
   }
+
   // Comment links
   .syntax--markup.syntax--link {
     color: inherit;
   }
 }
+
 .syntax--string {
   color: @green;
 }
+
 // SLIM ================================================
+
 .syntax--slim {
   // Tags
   .syntax--entity.syntax--name.syntax--tag,
   .syntax--meta.syntax--tag {
     color: @red;
   }
+
   // Classes & attributes
   .syntax--punctuation.syntax--separator.syntax--key-value
     + .syntax--entity.syntax--other.syntax--attribute-name,
   .syntax--entity.syntax--other.syntax--attribute-name {
     color: @purple;
+
     &.syntax--event {
       color: @purple;
     }
   }
+
   // Attributes
   .syntax--meta.syntax--attribute-with-value {
     & > .syntax--entity.syntax--other.syntax--attribute-name.syntax--event {
       color: @yellow;
     }
   }
+
   // Strings
   .syntax--string {
     color: @green;
   }
+
   // Links
   .syntax--markup.syntax--link {
     color: @yellow;
   }
+
   // Ruby punctuation
   .syntax--punctuation.syntax--section.syntax--embedded {
     color: @indigo;
   }
+
   // Ruby square brackets & commas
   .syntax--punctuation.syntax--section.syntax--array.syntax--ruby,
   .syntax--punctuation.syntax--separator.syntax--object.syntax--ruby {
     color: @lightgray;
   }
+
   // Ruby = operator
   .syntax--punctuation.syntax--separator.syntax--key-value {
     color: @lightgray;
   }
+
   // Ruby operators
   .syntax--keyword.syntax--operator {
     color: @yellow;
   }
+
   // Embedded Ruby line operator
   .syntax--meta.syntax--line.syntax--ruby {
     color: @lightgray;
   }
+
   // Ruby variables
   .syntax--source.syntax--ruby.syntax--embedded {
     color: @blue;
   }
+
   // Ruby helpers
   .syntax--support.syntax--function.syntax--viewhelpers.syntax--rails {
     color: @blue;
   }
+
   // Ruby keywords
   .syntax--source.syntax--ruby .syntax--keyword.syntax--control.syntax--ruby {
     color: @orange;
   }
+
   // Ruby pseudo methods
   .syntax--source.syntax--ruby
     .syntax--keyword.syntax--control.syntax--pseudo-method.syntax--ruby {
     color: @blue;
   }
+
   // Ruby attributes
   .syntax--constant.syntax--other.syntax--symbol.syntax--hashkey.syntax--ruby {
     color: @purple;
   }
+
   // Ruby hash symbols
   .syntax--constant.syntax--other.syntax--symbol {
     color: @yellow;
   }
+
   // Ruby block variables
   .syntax--variable {
     color: @yellow;
   }
+
   // Ruby symbols
   .syntax--source.syntax--ruby
     .syntax--constant.syntax--other.syntax--symbol.syntax--ruby {
     color: @orange;
   }
+
   // Booleans
   .syntax--constant.syntax--language.syntax--boolean.syntax--ruby {
     color: @yellow;
   }
+
   // Ruby numeric
   .syntax--constant.syntax--numeric {
     color: @turquoise;
   }
+
   // Entities
   .syntax--constant {
     color: @turquoise;
   }
+
   // Brackets & punctuation
   .syntax--punctuation.syntax--section.syntax--function.syntax--ruby,
   .syntax--punctuation.syntax--section.syntax--scope.syntax--ruby,
   .syntax--punctuation.syntax--separator.syntax--method.syntax--ruby {
     color: @lightgray;
   }
+
   // Pseudo methods
   .syntax--keyword.syntax--control.syntax--pseudo-method.syntax--ruby {
     color: @yellow;
   }
 }
+
 // XML =================================================
+
 .syntax--xml {
   // Tags
   .syntax--entity.syntax--name.syntax--tag {
-    color: @pink;
+    color: @red;
   }
+
   // Tag brackets
   .syntax--punctuation.syntax--definition.syntax--tag {
-    color: @pink;
+    color: @red;
   }
+
   // Attributes
   .syntax--entity.syntax--other.syntax--attribute-name.syntax--localname {
     color: @yellow;
   }
+
   // Links
   .syntax--markup.syntax--link {
     color: @turquoise;
   }
+
   // Strings
   .syntax--string {
     color: @indigo;
   }
 }
+
 // YAML ================================================
+
 .syntax--yaml {
   // Properties
   .syntax--entity.syntax--name.syntax--tag.syntax--yaml {
     color: @indigo;
   }
+
   // Strings
   .syntax--string {
     color: @turquoise;
   }
+
   .syntax--constant.syntax--language.syntax--yaml {
     color: @yellow;
   }
+
   .syntax--constant.syntax--numeric.syntax--yaml {
-    color: @pink;
+    color: @red;
   }
 }
+
 // MARKDOWN ============================================
+
 // Headings
 .syntax--markup.syntax--heading {
   color: @blue;
 }
+
 // Links
 .syntax--markup.syntax--underline.syntax--link.syntax--https.syntax--hyperlink {
   color: @turquoise;
 }
+
 // List bullets
 .syntax--variable.syntax--unordered.syntax--list.syntax--gfm {
-  color: @pink;
+  color: @red;
 }
+
 // Blockquotes
 .syntax--source.syntax--gfm .syntax--quote {
-  color: @pink;
+  color: @red;
 }
+
 // CSS =================================================
+
 .syntax--css {
   // Property names
   .syntax--property-name.syntax--support {
     color: @darkgray !important;
   }
+
   // Property values
   .syntax--property-value.syntax--support {
     color: @blue !important;
   }
+
   // Constants
   .syntax--constant {
     color: @yellow;
   }
+
   // Class selectors
   .syntax--entity.syntax--other.syntax--attribute-name {
     color: @purple;
   }
+
   // Pseudo-class selectors
   .syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-class {
     color: @orange;
   }
+
   // ID selectors {
   .syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
     color: @green;
   }
+
   // Tag selectors
   .syntax--entity.syntax--name.syntax--tag {
-    color: @pink;
+    color: @red;
   }
+
   // Functions
   .syntax--support.syntax--function,
   .syntax--entity.syntax--name.syntax--function {
     color: @blue;
   }
+
   // Numbers & units
   .syntax--constant.syntax--numeric,
   .syntax--keyword.syntax--other.syntax--unit {
     color: @purple;
   }
+
   .syntax--keyword.syntax--other.syntax--unit {
-    color: @pink;
+    color: @red;
   }
+
   // Keywords
   .syntax--keyword {
     color: @indigo;
+
     &.syntax--control {
       color: @indigo;
     }
   }
+
   // Punctuation
   .syntax--meta.syntax--definition.syntax--variable,
   .syntax--punctuation.syntax--section.syntax--function .syntax--scss {
     color: @lightgray !important;
   }
+
   // Operators
   .syntax--keyword.syntax--operator {
     color: @yellow;
   }
+
   // Variables
   .syntax--variable {
     color: @green;
   }
+
   // Interpolation
   .syntax--variable.syntax--interpolation.syntax--scss {
     color: @indigo;
   }
+
   // !important
   .syntax--keyword.syntax--other.syntax--important.syntax--scss {
     color: @yellow;
   }
 }
+
 // JAVASCRIPT ==========================================
+
 .syntax--source.syntax--js,
 .syntax--source.syntax--coffee {
   color: @lightgray;
+
   // Variables & object properties
   .syntax--variable {
     color: @purple;
   }
+
   // Booleans
   .syntax--constant.syntax--language.syntax--boolean,
   .syntax--constant {
     color: @yellow;
   }
+
   // Object properties
   .syntax--support.syntax--variable.syntax--property,
   .syntax--variable {
     color: @indigo;
   }
+
   // Different object properties (???)
   .syntax--support.syntax--variable.syntax--property.syntax--dom {
     color: @blue;
   }
+
   .syntax--variable.syntax--other.syntax--property {
     color: @lightgray;
   }
+
   // Functions
   .syntax--entity.syntax--name.syntax--function,
   .syntax--support.syntax--function.syntax--dom,
   .syntax--support.syntax--function {
     color: @blue;
   }
+
   // Parameters
   .syntax--variable.syntax--parameter.syntax--function,
   .syntax--formal-parameter.syntax--identifier {
     color: @orange;
   }
+
   // Strings
   .syntax--string,
   .syntax--punctuation.syntax--definition.syntax--string {
     color: @green !important;
   }
+
   // Keywords
   .syntax--storage,
   .syntax--constant,
@@ -441,137 +536,194 @@ atom-text-editor.editor {
   .syntax--keyword.syntax--operator.syntax--new {
     color: @purple;
   }
+
   // Assignment and mathematical operators
   .syntax--keyword.syntax--operator {
-    color: @indigo;
+    color: @lightgray;
+
     // Non-assignment or mathematical operators
     &.syntax--comparison,
     &.syntax--logical {
       color: @yellow;
     }
   }
+
   // Punctuation
   .syntax--punctuation,
   .syntax--meta.syntax--delimiter.syntax--comma,
   .syntax--period {
     color: @lightgray;
   }
+
   // Comment slashes
   .syntax--punctuation.syntax--definition.syntax--comment {
     color: @dark-indigo;
   }
+
   // Classes
   .syntax--meta.syntax--class,
   .syntax--support.syntax--class {
     color: @red;
   }
+
   // Numbers
   .syntax--constant.syntax--numeric {
     color: @orange;
   }
+
   // Arguments
   .syntax--meta.syntax--arguments {
     color: @orange;
   }
+
   // Braces & parenthesis
   .syntax--meta.syntax--brace {
     color: @lightgray;
   }
+
   // HTML Tag
   .syntax--entity.syntax--name.syntax--tag {
-    color: @red;
+    color: @indigo;
   }
+
   // HTML Attribute
   .syntax--entity.syntax--other.syntax--attribute-name {
-    color: @yellow;
+    color: @blue;
   }
 }
+
 // COFEESCRIPT =========================================
+
 .syntax--source.syntax--coffee {
   color: @purple;
+
   // Constant keywords & Booleans
   .syntax--constant,
   .syntax--constant.syntax--language.syntax--boolean {
     color: @yellow;
   }
+
   // "Console" object
   .syntax--entity.syntax--name.syntax--type {
     color: @yellow;
   }
+
   // Operators
   .syntax--keyword.syntax--operator {
     color: @yellow;
   }
 }
+
 // RUBY ================================================
+
 .syntax--source.syntax--ruby {
   // Keywords
   .syntax--keyword.syntax--control {
     color: @red;
   }
+
   // Functions & methods
   .syntax--support.syntax--function,
   .syntax--entity.syntax--name.syntax--function {
     color: @blue;
   }
+
   // Symbols
   .syntax--constant.syntax--other.syntax--symbol {
     color: @purple;
   }
+
   // Booleans
   .syntax--constant.syntax--language {
     color: @yellow;
   }
+
   // Numbers
   .syntax--constant.syntax--numeric {
     color: @orange;
   }
+
   // Block variables
   .syntax--variable.syntax--other.syntax--block {
     color: @indigo;
   }
+
   // String interpolation brackets
   .syntax--punctuation.syntax--section.syntax--embedded {
     color: @indigo;
   }
+
   // Interpolated variables
   .syntax--embedded.syntax--source {
     color: @turquoise;
+
     .syntax--constant.syntax--numeric {
       color: @orange;
     }
   }
+
   // Parameters
   .syntax--variable.syntax--parameter.syntax--function {
     color: @orange;
   }
+
   // Classes
   .syntax--entity.syntax--name.syntax--type.syntax--class {
     color: @yellow;
   }
+
   // Modules
   .syntax--variable.syntax--constant {
     color: @turquoise;
   }
+
   // HTML tags
   .syntax--source.syntax--c {
     color: @purple;
+
     .syntax--keyword.syntax--operator {
       color: @red;
     }
   }
 }
+
 // JSON ================================================
+
 .syntax--source.syntax--json {
   .syntax--meta.syntax--structure.syntax--dictionary.syntax--json
     > .syntax--string.syntax--quoted.syntax--json {
     color: @indigo;
+
     & > .syntax--punctuation.syntax--string {
       color: @indigo;
     }
   }
+
   .syntax--constant {
     color: @red;
   }
 }
-//
+
+// HTML ================================================
+
+.syntax--text.syntax--html.syntax--basic {
+  // Brackets
+  .syntax--punctuation.syntax--definition.syntax--tag {
+    color: @lightgray;
+  }
+
+  // Tags
+  .syntax--entity.syntax--name.syntax--tag {
+    color: @indigo;
+  }
+
+  // Attributes
+  .syntax--entity.syntax--other.syntax--attribute-name {
+    color: @pink;
+  }
+
+  // Strings
+  .syntax--string {
+    color: @blue;
+  }
+}
