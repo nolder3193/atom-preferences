@@ -32,6 +32,10 @@
       }
     """
 
+  'currentColor':
+    'prefix': 'cur'
+    'body': 'currentColor'
+
   'debug':
     'prefix': '2bug'
     'body': ''
@@ -71,6 +75,10 @@
 	'important':
     'prefix': 'imp'
     'body': '!important$1'
+
+	'inherit':
+    'prefix': 'inherit'
+    'body': 'inherit;$1'
 
 	'opacity':
     'prefix': 'op'
