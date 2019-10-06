@@ -1,13 +1,13 @@
 // Defaults
 @pink: rgb(255, 116, 254);
-@red: rgb(230, 95, 131);
-@orange: rgb(224, 140, 99);
-@yellow: rgb(214, 178, 108);
-@green: rgb(119, 179, 118);
-@darkblue: rgb(88, 122, 221);
-@blue: rgb(94, 154, 226);
+@red: rgb(255, 74, 122);
+@orange: rgb(228, 110, 79);
+@yellow: rgb(218, 172, 83);
+@green: rgb(141, 191, 77);
+@darkblue: rgb(108, 143, 221);
+@blue: rgb(116, 174, 212);
 @turquoise: rgb(76, 167, 184);
-@purple: rgb(175, 124, 215);
+@purple: rgb(184, 108, 215);
 @indigo: rgb(122, 101, 208);
 @dark-indigo: rgb(70, 85, 144);
 @darkgray: rgb(100, 104, 160);
@@ -482,7 +482,7 @@ atom-text-editor.editor {
 
 .syntax--source.syntax--js,
 .syntax--source.syntax--coffee {
-  color: @darkblue;
+  color: @purple;
 
   // Variables & object properties
   .syntax--variable {
@@ -492,12 +492,12 @@ atom-text-editor.editor {
   // Booleans
   .syntax--constant.syntax--language.syntax--boolean,
   .syntax--constant {
-    color: @red;
+    color: @yellow;
   }
 
   // Object properties
   .syntax--variable.syntax--other.syntax--property {
-    color: @purple;
+    color: @darkblue;
   }
 
   // Different object properties (???)
@@ -509,7 +509,7 @@ atom-text-editor.editor {
   .syntax--entity.syntax--name.syntax--function,
   .syntax--support.syntax--function.syntax--dom,
   .syntax--support.syntax--function {
-    color: @blue;
+    color: @darkblue;
   }
 
   // Parameters
@@ -527,17 +527,17 @@ atom-text-editor.editor {
   // Keywords
   .syntax--storage,
   .syntax--keyword.syntax--control {
-    color: @red;
+    color: @indigo;
   }
 
   // New operator
   .syntax--keyword.syntax--operator.syntax--new {
-    color: @blue;
+    color: @red;
   }
 
   // Assignment and mathematical operators
   .syntax--keyword.syntax--operator {
-    color: @lightgray;
+    color: @red;
 
     // Non-assignment or mathematical operators
     &.syntax--comparison,
