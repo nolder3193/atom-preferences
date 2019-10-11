@@ -1,8 +1,19 @@
 # GENERAL
 
-'question':
-  'prefix': 'que'
-  'body': 'question'
+# SLIM ==============================================
+
+'.text.slim':
+  'link_to':
+    'prefix': 'lt'
+    'body': "= link_to '$1', '$2'"
+    
+  'image_tag':
+    'prefix': 'it'
+    'body': "= image_tag '$1'"
+    
+  'svg':
+    'prefix': 'sv'
+    'body': "= svg '$1'"
 
 # CSS ===============================================
 
@@ -31,10 +42,6 @@
         $2
       }
     """
-
-  'currentColor':
-    'prefix': 'cur'
-    'body': 'currentColor'
 
   'debug':
     'prefix': '2bug'
@@ -75,10 +82,6 @@
 	'important':
     'prefix': 'imp'
     'body': '!important$1'
-
-	'inherit':
-    'prefix': 'inherit'
-    'body': 'inherit;$1'
 
 	'opacity':
     'prefix': 'op'
@@ -139,7 +142,7 @@
 	'tablet-2':
     'prefix': 'tb'
     'body': '$tablet--sm'
-
+    
 	'tablet-3':
     'prefix': 'tbs'
     'body': '$tablet--sm'
@@ -199,21 +202,20 @@
 # SCSS ==============================================
 
 '.source.css.scss':
-
+  
   'import':
     'prefix': 'ip'
     'body': '@import "${1:fileName}";'
-
+    
   'import-2':
     'prefix': 'im'
     'body': '@import "${1:fileName}";'
-
-
+  
 # JavaScript ========================================
 
 '.source.js':
 
-	"addClass":
+  "addClass":
     "prefix": "ac"
     "body": "addClass('$1')$2"
 
@@ -334,9 +336,9 @@
   'tt':
     'prefix': 'tt'
     'body': 'var $this = $(this);'
-
+  
   # REACT
-
+  
   'import React Component':
     'prefix': 'im'
     'body': "import ${1:Component} from '${2}';"
@@ -355,7 +357,7 @@
         }
 
       }
-
+      
       export default ${1:MyComponent};
     """
 
@@ -378,7 +380,7 @@
         }
 
       }
-
+      
       export default ${1:MyComponent};
     """
 
@@ -404,7 +406,7 @@
         }
 
       }
-
+      
       export default ${1:MyComponent};
     """
 
@@ -435,7 +437,7 @@
         }
 
       }
-
+      
       export default ${1:MyComponent};
     """
 
@@ -965,9 +967,9 @@
   'PropTypes.any.isRequired':
     'prefix': 'ptanyr'
     'body': 'PropTypes.any.isRequired'
-
+    
   # JSX -----------------------
-
+  
   'div':
     'prefix': 'div'
     'body': '<div>$1</div>'
@@ -1047,11 +1049,12 @@
 	'id':
     'prefix': 'id'
     'body': 'id="$1"'
-
+  
 # ERB ===============================================
 
 '.source.html.erb':
-
+  
   'ruby-tags':
     'prefix': ',5'
     'body': '<%$1 %>'
+  
